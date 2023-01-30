@@ -1,2 +1,2 @@
 FROM tomcat
-COPY target/*.war /usr/local/tomcat/webapps.dist/test.war
+COPY target/*.war /usr/local/tomcat/webapps/test.war
