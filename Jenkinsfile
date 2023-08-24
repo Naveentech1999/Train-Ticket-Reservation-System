@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image "maven:3.6.3-jdk-11"
-        }
+   agent {
+    docker {
+        image "maven:3.8.4-jdk-8"
+        workingDir "/tmp/build"
     }
+}
     stages {
         stage('Clone Repository') {
             steps {
