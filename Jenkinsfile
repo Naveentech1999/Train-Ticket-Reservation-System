@@ -6,10 +6,6 @@
             git branch: 'main', url: 'https://github.com/Naveentech1999/Train-Ticket-Reservation-System.git' 
           }
       }
-      stage("build"){
-          steps{
-              sh "mvn clean package"
-          }
-      }
      }
  }
+      
