@@ -11,3 +11,5 @@
               sh "mvn clean package"
           }
       }
+     }
+ }
