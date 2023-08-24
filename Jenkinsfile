@@ -1,5 +1,8 @@
 pipeline {
-  agent { docker { image 'maven:3.6.3-jdk-11-slim' } }
+  agent { docker { 
+    image 'maven:3.6.3-jdk-11-slim'
+    args '--user 1000:1000'
+  } }
   stages {
     stage('Build'){
       steps {
