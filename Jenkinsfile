@@ -1,20 +1,12 @@
 pipeline {
-
-  agent any
-  environment {
-      PATH = "/opt/maven/bin:$PATH"
-  }
+  agent { docker { image 'maven:3.6.3' } }
   stages {
-      stage("git"){
-          steps{
-            git branch: 'main', url: 'https://github.com/Naveentech1999/Train-Ticket-Reservation-System.git'
-          
-          }
-      }
-      stage("build"){
-          steps{
-              sh "mvn clean package"
-          }
-      }
+    stage('Build'){
+      steps {
+        git branch: 'main', url: 'https://github.com/Naveentech1999/Train-Ticket-Reservation-System.git'
+        sh 'mvn --version'
+        sh 'mvn clean install'
+        }
+    }
   }
 }
