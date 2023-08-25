@@ -1,4 +1,4 @@
-FROM tomcat:9.0.56-jdk8-openjdk
-EXPOSE 8083
-COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
-CMD ["catalina.sh", "run"]
+FROM openjdk:8
+EXPOSE 8082
+ADD target/Train-Ticket-Reservation-System.war Train-Ticket-Reservation-System.war
+ENTRYPOINT ["java","-jar","/Train-Ticket-Reservation-System.war"]
